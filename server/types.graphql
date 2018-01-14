@@ -1,0 +1,66 @@
+# The following types define the data model of the example service
+# based on which the GraphQL API is generated
+
+type User @model {
+  id: ID! @isUnique  #read-only (Managed by graphcool)
+
+  createdAt: DateTime!
+  updatedAt: DateTime!
+
+  primeiroNome: String
+  ultimoNome: String
+  email: String @isUnique
+  senha: String
+
+  nascimento: DateTime
+  
+  rg: String
+  cnh: String
+
+  # posts: [Post!]! @relation(name: "UserPosts")
+}
+
+
+# Uncomment the model below as well
+
+# type Post @model {
+#   id: ID! @isUnique
+#   title: String!
+#
+#   # Every relation also required a back-relation (to determine 1:1, 1:n or n:m)
+#   author: User! @relation(name: "UserPosts")
+# }
+
+
+type Viatura @model {
+  id: ID! @isUnique
+  placa: String! @isUnique
+  modelo: String!
+  fabricante: String!
+  cor: String
+  ano: DateTime
+}
+
+# type Assistencia @model {
+#   id: ID! @isUnique
+#   nome: String!
+
+#   cgc: String!
+#   cep: String!
+#   enderco: String!
+#   cordenadorRegiao: String!
+#   servicos: [servicos!]! @relation("AssistenciaServicos")
+# }
+
+# type Servico @model {
+#   id: ID! @isUnique
+#   nomeServico: String!
+
+#   ate40km: String
+#   maisDe40Km: String
+
+#   tempoTrabalhado: String
+#   tempoParado: String
+
+#   assistencia: Assistencia! @relation("AssistenciaServicos)
+# }
