@@ -7,13 +7,13 @@ type User @model {
   createdAt: DateTime!
   updatedAt: DateTime!
 
-  primeiroNome: String
-  ultimoNome: String
+  nome: String
+  sobrenome: String
   email: String @isUnique
   senha: String
 
   nascimento: DateTime
-  
+
   rg: String
   cnh: String
 
