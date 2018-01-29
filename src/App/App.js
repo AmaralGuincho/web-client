@@ -4,13 +4,14 @@ import { Layout, Menu, Icon } from 'antd'
 
 import './App.css'
 import Funcionario from '../containers/Funcionario'
+import NotFound from '../components/NotFound'
 
 const { SubMenu } = Menu
 const { Header, Sider, Footer } = Layout
 
 const menuItems = [
   {
-    routeName: 'funcionario',
+    routeName: '/funcionario',
     icon: 'user',
     text: 'Funcionario',
     component: Funcionario
@@ -36,7 +37,7 @@ const makeSubmenu = menuItem => (
 )
 
 const makeRoutes = route => (
-  <Route path={route.routerName}
+  <Route path={route.routeName}
     component={route.component}
     key={`${route.routeName}-router`}
   />
@@ -75,6 +76,8 @@ const App = () => (
         <Switch>
           {/* Dinamicaly render react-router routes */}
           {menuItems.map(makeRoutes)}
+
+          <Route exact component={NotFound} />
         </Switch>
 
         <Footer style={{ textAlign: 'center' }}>
