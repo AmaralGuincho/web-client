@@ -29,9 +29,11 @@ const makeSubmenu = menuItem => (
     }
   >
     <Menu.Item key={`${menuItem.routeName}1`}>
-      <Link to={menuItem.routeName}>Consultar</Link>
+      <Link to={menuItem.routeName}> Consultar </Link>
     </Menu.Item>
-    <Menu.Item key={`${menuItem.routeName}2`}> Cadastrar</Menu.Item>
+    <Menu.Item key={`${menuItem.routeName}2`}>
+      <Link to={`${menuItem.routeName}/create`}> Cadastrar </Link>
+    </Menu.Item>
     <Menu.Item key={`${menuItem.routeName}3`}> Editar</Menu.Item>
   </SubMenu>
 )

@@ -10,10 +10,14 @@ import { ApolloClient } from 'apollo-client'
 import { WebSocketLink } from 'apollo-link-ws'
 import { getMainDefinition } from 'apollo-utilities'
 import 'typeface-roboto-slab'
+import moment from 'moment'
+import 'moment/locale/pt-br'
 
 import './index.css'
 import App from './App'
 import registerServiceWorker from './registerServiceWorker'
+
+moment.locale('pt-br')
 
 const {
   REACT_APP_API,
